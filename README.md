@@ -26,8 +26,6 @@ I rebuilt it as a cloud-native product:
 
 ---
 
----
-
 ## 🏗️ Architecture
 
 Developer → GitHub Push  

@@ -26,13 +26,6 @@ I rebuilt it as a cloud-native product:
 
 ---
 
-## ✨ Why Interviewers Love This
-
-- **Real Business Problem**, not a todo app
-- **End-to-End DevOps**, not just Docker
-- **Production Patterns**: IaC, GitOps, security scanning, auto-scaling
-- **Multi-Environment**: Local (Docker Compose) → Staging (Pages) → Prod (EKS)
-
 ---
 
 ## 🏗️ Architecture

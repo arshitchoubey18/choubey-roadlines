@@ -1,0 +1,46 @@
+name: Choubey Roadlines CI/CD
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint HTML
+        run: |
+          npm install -g htmlhint
+          htmlhint web/*.html || true
+      - name: Build Docker image
+        run: docker build -t choubey-roadlines:${{ github.sha }} .
+      - name: Trivy Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: choubey-roadlines:${{ github.sha }}
+          format: 'table'
+      
+  deploy:
+    needs: build-test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ap-south-1
+      - name: Login to ECR
+        run: aws ecr get-login-password | docker login --username AWS --password-stdin <ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com
+      - name: Build & Push
+        run: |
+          docker build -t choubey-roadlines:${{ github.sha }} .
+          docker tag choubey-roadlines:${{ github.sha }} <ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com/choubey:${{ github.sha }}
+          docker push <ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com/choubey:${{ github.sha }}
+      - name: Deploy to EKS
+        run: |
+          aws eks update-kubeconfig --name choubey-cluster --region ap-south-1
+          kubectl set image deployment/choubey-web web=<ACCOUNT_ID>.dkr.ecr.ap-south-1.amazonaws.com/choubey:${{ github.sha }} -n production

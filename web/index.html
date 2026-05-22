@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choubey Roadlines - India's Reliable Road Transport Partner Since 1998</title>
+<meta name="description" content="Pan-India FTL & PTL transport services from Bangalore. 500+ trucks, 28 states, 99.2% on-time delivery.">
+<style>
+:root{
+  --navy:#0a2540;
+  --navy-light:#133a60;
+  --navy-2:#0d3358;
+  --orange:#ff6b00;
+  --orange-dark:#e05a00;
+  --white:#ffffff;
+  --gray-50:#f8fafc;
+  --gray-100:#f1f5f9;
+  --gray-200:#e2e8f0;
+  --gray-300:#cbd5e1;
+  --gray-600:#475569;
+  --gray-900:#0f172a;
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg:0 12px 32px rgba(10,37,64,0.12);
+  --shadow-xl:0 20px 40px rgba(0,0,0,0.15);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--gray-900);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* Header */
+.header{position:sticky;top:0;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);z-index:1000}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--navy);letter-spacing:0.3px}
+.logo svg{width:34px;height:34px}
+.logo span{color:var(--orange)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-weight:500;font-size:15px;color:var(--gray-600);position:relative;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--navy)}
+.nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:var(--orange);transition:width .2s}
+.nav-links a:hover::after{width:100%}
+.header-cta{display:flex;align-items:center;gap:14px}
+.btn-call{display:flex;align-items:center;gap:7px;padding:10px 18px;background:var(--navy);color:white;border-radius:9px;font-weight:600;font-size:14px;transition:all .2s}
+.btn-call:hover{background:var(--navy-light);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-call svg{width:16px;height:16px}
+.mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--navy)}
+
+/* Hero */
+.hero{background:linear-gradient(110deg,var(--navy) 0%,#0d2f52 40%,var(--navy-2) 100%);color:white;padding:88px 0 96px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30%;right:-15%;width:700px;height:700px;background:radial-gradient(circle,rgba(255,107,0,0.18) 0%,transparent 65%);border-radius:50%;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-20%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,0.05) 0%,transparent 70%);border-radius:50%}
+.hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:64px;align-items:center;position:relative;z-index:1}
+.hero h1{font-size:52px;line-height:1.08;font-weight:800;letter-spacing:-0.8px;margin-bottom:18px}
+.hero h1 span{display:block;color:var(--orange);font-size:32px;margin-top:10px;font-weight:700;letter-spacing:-0.3px}
+.hero p{font-size:18px;color:#cbd5e1;max-width:520px;margin-bottom:32px;line-height:1.6}
+.hero-buttons{display:flex;gap:14px;margin-bottom:36px;flex-wrap:wrap}
+.btn{padding:14px 26px;border-radius:10px;font-weight:600;font-size:15.5px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;transition:all .25s;white-space:nowrap}
+.btn-primary{background:var(--orange);color:white;box-shadow:0 8px 22px rgba(255,107,0,0.28)}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 12px 28px rgba(255,107,0,0.35)}
+.btn-secondary{background:rgba(255,255,255,0.1);color:white;border:1.5px solid rgba(255,255,255,0.22);backdrop-filter:blur(8px)}
+.btn-secondary:hover{background:rgba(255,255,255,0.16);border-color:rgba(255,255,255,0.3)}
+.btn svg{width:18px;height:18px}
+.hero-features{display:flex;gap:26px;flex-wrap:wrap}
+.hero-feature{display:flex;align-items:center;gap:8px;font-size:14px;color:#9fb0c3}
+.hero-feature svg{width:18px;height:18px;color:var(--orange);flex-shrink:0}
+
+/* Track Card */
+.track-card{background:white;color:var(--gray-900);border-radius:18px;padding:28px;box-shadow:var(--shadow-xl);border:1px solid rgba(0,0,0,0.04)}
+.track-card h3{font-size:20px;font-weight:750;color:var(--navy);margin-bottom:6px}
+.track-sub{color:var(--gray-600);font-size:14px;margin-bottom:20px}
+.track-input{display:flex;gap:8px;margin-bottom:14px}
+.track-input input{flex:1;padding:13px 15px;border:2px solid var(--gray-200);border-radius:10px;font-size:15px;font-family:inherit;transition:all .2s}
+.track-input input:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,0,0.12)}
+.track-input button{padding:13px 22px;background:var(--navy);color:white;border:none;border-radius:10px;font-weight:600;cursor:pointer;transition:all .2s;font-size:14.5px}
+.track-input button:hover{background:var(--navy-light)}
+.track-hint{font-size:12px;color:var(--gray-600);display:flex;align-items:center;gap:5px}
+#trackResult{min-height:20px}
+.alert{padding:12px 14px;border-radius:9px;font-size:13.5px;margin-top:14px;line-height:1.45;border:1px solid}
+.alert.error{background:#fef2f2;color:#991b1b;border-color:#fecaca}
+.alert.info{background:#eff6ff;color:#1e40af;border-color:#bfdbfe}
+.alert.success{background:#f0fdf4;color:#166534;border-color:#bbf7d0}
+.track-status{margin-top:18px}
+.status-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--gray-200)}
+.status-id{font-weight:700;color:var(--navy);font-size:15px}
+.status-badge{background:#dcfce7;color:#166534;padding:4px 10px;border-radius:20px;font-size:11.5px;font-weight:700;letter-spacing:0.3px;text-transform:uppercase}
+.timeline{position:relative;padding-left:26px}
+.timeline::before{content:'';position:absolute;left:9px;top:5px;bottom:5px;width:2px;background:var(--gray-200)}
+.timeline-item{position:relative;padding-bottom:18px}
+.timeline-item:last-child{padding-bottom:2px}
+.timeline-dot{position:absolute;left:-21px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--gray-300);border:2.5px solid white;box-shadow:0 0 0 2px var(--gray-200)}
+.timeline-dot.active{background:var(--orange);box-shadow:0 0 0 2px rgba(255,107,0,0.28)}
+.timeline-dot.done{background:#22c55e;box-shadow:0 0 0 2px rgba(34,197,94,0.25)}
+.timeline-content{display:flex;justify-content:space-between;gap:12px}
+.timeline-title{font-weight:600;font-size:14px;color:var(--navy);line-height:1.3}
+.timeline-time{font-size:12px;color:var(--gray-600);white-space:nowrap}
+.timeline-desc{font-size:12.5px;color:var(--gray-600);margin-top:3px}
+
+/* Sections */
+.section{padding:84px 0}
+.section-header{text-align:center;max-width:700px;margin:0 auto 56px}
+.section-eyebrow{display:inline-block;background:rgba(255,107,0,0.09);color:var(--orange);padding:6px 14px;border-radius:20px;font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:14px}
+.section-title{font-size:36px;font-weight:800;color:var(--navy);margin-bottom:12px;line-height:1.2;letter-spacing:-0.5px}
+.section-desc{font-size:17px;color:var(--gray-600);line-height:1.6}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service-card{background:white;border:1px solid var(--gray-200);border-radius:16px;padding:28px;transition:all .3s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--navy),var(--orange));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:52px;height:52px;background:linear-gradient(135deg,rgba(255,107,0,0.12),rgba(255,107,0,0.04));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--orange)}
+.service-icon svg{width:26px;height:26px;stroke-width:1.7}
+.service-card h3{font-size:18.5px;font-weight:720;color:var(--navy);margin-bottom:8px}
+.service-card p{color:var(--gray-600);font-size:14.2px;line-height:1.6}
+.service-meta{margin-top:14px;font-size:12.5px;color:var(--orange);font-weight:650;display:flex;align-items:center;gap:5px}
+
+/* Stats */
+.stats{background:var(--navy);color:white;padding:58px 0;position:relative;overflow:hidden}
+.stats::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;position:relative;z-index:1}
+.stat{text-align:center}
+.stat-number{font-size:44px;font-weight:800;color:var(--orange);line-height:1;margin-bottom:8px;letter-spacing:-0.5px}
+.stat-label{font-size:14.5px;color:#b8c5d3;font-weight:500}
+
+/* Fleet */
+.fleet{background:var(--gray-50)}
+.fleet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.fleet-card{background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-200);transition:all .3s}
+.fleet-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.fleet-visual{height:138px;background:linear-gradient(135deg,#f1f5f9 0%,#e5eef7 100%);display:flex;align-items:center;justify-content:center;padding:18px;position:relative}
+.fleet-visual svg{width:100%;height:auto;max-width:190px}
+.fleet-body{padding:20px}
+.fleet-name{font-weight:730;color:var(--navy);font-size:16.5px;margin-bottom:3px}
+.fleet-capacity{color:var(--orange);font-weight:650;font-size:13px;margin-bottom:10px}
+.fleet-specs{font-size:13px;color:var(--gray-600);line-height:1.55}
+.fleet-specs li{display:flex;gap:6px;padding:2px 0}
+.fleet-specs li::before{content:'•';color:var(--orange);font-weight:700}
+
+/* Booking */
+.booking-grid{display:grid;grid-template-columns:1.25fr 0.75fr;gap:48px;align-items:start}
+.form-card{background:white;border:1px solid var(--gray-200);border-radius:16px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,0.04)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:16px}
+.form-group.full{grid-column:1/-1}
+.form-label{display:block;font-size:13px;font-weight:640;color:var(--navy);margin-bottom:6px}
+.form-control{width:100%;padding:11.5px 14px;border:1.6px solid var(--gray-200);border-radius:9px;font-size:15px;font-family:inherit;transition:all .2s;background:white;color:var(--gray-900)}
+.form-control:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,0,0.11)}
+select.form-control{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+.form-submit{width:100%;margin-top:6px;padding:14px;background:var(--orange);color:white;border:none;border-radius:10px;font-weight:700;font-size:15.5px;cursor:pointer;transition:all .25s;letter-spacing:0.2px}
+.form-submit:hover{background:var(--orange-dark);transform:translateY(-1px);box-shadow:0 8px 20px rgba(255,107,0,0.26)}
+.form-submit:active{transform:translateY(0)}
+.booking-info{position:sticky;top:90px}
+.info-card{background:var(--navy);color:white;border-radius:16px;padding:32px;position:relative;overflow:hidden}
+.info-card::before{content:'';position:absolute;top:-50px;right:-50px;width:150px;height:150px;background:rgba(255,107,0,0.18);border-radius:50%;filter:blur(5px)}
+.info-card h3{font-size:22px;margin-bottom:18px;position:relative;font-weight:750}
+.info-list{position:relative}
+.info-list li{display:flex;gap:12px;margin-bottom:16px;font-size:14px;color:#cbd5e1;line-height:1.5}
+.info-list li:last-child{margin-bottom:0}
+.info-list svg{width:20px;height:20px;color:var(--orange);flex-shrink:0;margin-top:1px}
+
+/* Testimonials */
+.testimonials{background:var(--gray-50)}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.testimonial{background:white;padding:26px;border-radius:14px;border:1px solid var(--gray-200);position:relative;transition:all .25s}
+.testimonial:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.testimonial::before{content:'“';position:absolute;top:12px;right:22px;font-size:58px;color:rgba(255,107,0,0.12);font-family:Georgia,serif;line-height:1;pointer-events:none}
+.stars{display:flex;gap:3px;margin-bottom:12px;color:#f59e0b}
+.stars svg{width:15px;height:15px;fill:currentColor}
+.testimonial p{color:var(--gray-600);font-size:14px;line-height:1.65;margin-bottom:16px}
+.testimonial-author{display:flex;align-items:center;gap:11px}
+.author-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:13px;flex-shrink:0}
+.author-info h4{font-size:14px;font-weight:680;color:var(--navy);line-height:1.2}
+.author-info span{font-size:12px;color:var(--gray-600)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center}
+.about-content h2{font-size:32px;color:var(--navy);margin-bottom:16px;font-weight:800;letter-spacing:-0.4px;line-height:1.25}
+.about-content p{color:var(--gray-600);margin-bottom:14px;font-size:15.5px;line-height:1.7}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:22px}
+.about-feature{display:flex;gap:9px;align-items:flex-start}
+.about-feature svg{width:19px;height:19px;color:var(--orange);flex-shrink:0;margin-top:2px}
+.about-feature span{font-size:14px;color:var(--gray-900);font-weight:500;line-height:1.4}
+.about-visual{background:linear-gradient(135deg,var(--navy) 0%,#0f3d66 100%);border-radius:16px;padding:38px;color:white;position:relative;overflow:hidden}
+.about-visual::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3C/g%3E%3C/svg%3E")}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:26px;position:relative}
+.about-stat{text-align:center}
+.about-stat-number{font-size:34px;font-weight:800;color:var(--orange);line-height:1}
+.about-stat-label{font-size:12.5px;color:#b8c5d3;margin-top:5px;line-height:1.3}
+
+/* Contact */
+.contact{background:var(--gray-50)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.contact-cards{display:grid;gap:14px;align-content:start}
+.contact-card{background:white;padding:20px;border-radius:12px;border:1px solid var(--gray-200);display:flex;gap:15px;align-items:flex-start;transition:all .2s}
+.contact-card:hover{box-shadow:var(--shadow-sm);border-color:var(--gray-300)}
+.contact-icon{width:42px;height:42px;background:rgba(255,107,0,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0}
+.contact-icon svg{width:21px;height:21px}
+.contact-details h4{font-weight:700;color:var(--navy);margin-bottom:4px;font-size:14.5px}
+.contact-details p,.contact-details a{color:var(--gray-600);font-size:14px;line-height:1.5}
+.contact-details a:hover{color:var(--orange)}
+.map-card{background:white;border-radius:12px;overflow:hidden;border:1px solid var(--gray-200);height:100%;min-height:340px;display:flex;flex-direction:column}
+.map-visual{height:210px;background:linear-gradient(135deg,#0a2540 0%,#1a3f63 100%);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.map-visual::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20h10v10H20zM50 40h10v10H50zM70 70h10v10H70z' fill='%23ffffff' opacity='0.03'/%3E%3C/svg%3E")}
+.map-india{width:70%;height:auto;color:rgba(255,255,255,0.15)}
+.map-pin{position:absolute;width:26px;height:26px;background:var(--orange);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 12px rgba(0,0,0,0.35);left:52%;top:62%}
+.map-pin::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);width:9px;height:9px;background:white;border-radius:50%}
+.map-content{padding:22px;flex:1}
+.map-content h4{color:var(--navy);margin-bottom:8px;font-size:16px;font-weight:720}
+.map-content p{font-size:14px;color:var(--gray-600);line-height:1.55}
+
+/* Footer */
+.footer{background:var(--navy);color:#94a3b8;padding:56px 0 24px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:40px;margin-bottom:38px}
+.footer-brand h3{color:white;font-size:20px;margin-bottom:12px;font-weight:800;letter-spacing:0.3px}
+.footer-brand h3 span{color:var(--orange)}
+.footer-brand p{font-size:14px;line-height:1.6;margin-bottom:16px;color:#b8c5d3}
+.social-links{display:flex;gap:9px}
+.social-links a{width:34px;height:34px;background:rgba(255,255,255,0.08);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#cbd5e1;transition:all .2s}
+.social-links a:hover{background:var(--orange);color:white;transform:translateY(-2px)}
+.social-links svg{width:16px;height:16px}
+.footer-col h4{color:white;font-size:14.5px;font-weight:700;margin-bottom:16px;letter-spacing:0.2px}
+.footer-links li{margin-bottom:9px}
+.footer-links a{color:#94a3b8;font-size:13.8px;transition:color .2s}
+.footer-links a:hover{color:var(--orange)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:12.8px;flex-wrap:wrap;gap:12px;color:#7e8da0}
+
+/* Responsive */
+@media (max-width:1024px){
+  .hero-grid,.booking-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .fleet-grid{grid-template-columns:repeat(2,1fr)}
+  .testimonial-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .hero{padding:70px 0 80px}
+  .hero h1{font-size:44px}
+  .booking-info{position:static}
+}
+@media (max-width:768px){
+  .nav-links,.header-cta .btn-call{display:none}
+  .mobile-toggle{display:block}
+  .nav-links.active{display:flex;position:absolute;top:72px;left:0;right:0;background:white;flex-direction:column;padding:20px 20px 24px;border-bottom:1px solid var(--gray-200);box-shadow:0 10px 24px rgba(0,0,0,0.08);gap:0}
+  .nav-links.active a{display:block;padding:12px 0;border-bottom:1px solid var(--gray-100);width:100%}
+  .nav-links.active a::after{display:none}
+  .nav-links.active li:last-child a{border:none}
+  .hero h1{font-size:34px}
+  .hero h1 span{font-size:24px}
+  .hero p{font-size:16px}
+  .hero-buttons{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center}
+  .services-grid,.fleet-grid,.testimonial-grid,.stats-grid,.about-features{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .stats-grid{gap:28px}
+  .section{padding:64px 0}
+  .section-title{font-size:28px}
+  .section-header{margin-bottom:40px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .stat-number{font-size:38px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a href="#home" class="logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="9" width="14" height="9" rx="1.5" fill="#0a2540"/>
+        <path d="M17 11.5h4.2L25 15v3h-8v-6.5Z" fill="#ff6b00"/>
+        <circle cx="7.5" cy="22" r="3" fill="#0a2540"/>
+        <circle cx="7.5" cy="22" r="1.3" fill="white"/>
+        <circle cx="20.5" cy="22" r="3" fill="#0a2540"/>
+        <circle cx="20.5" cy="22" r="1.3" fill="white"/>
+      </svg>
+      CHOUBEY<span>ROADLINES</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#fleet">Fleet</a></li>
+      <li><a href="#booking">Booking</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="header-cta">
+      <a href="tel:+918041234567" class="btn-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +91 80 4123 4567
+      </a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <h1>India's Reliable Road Transport Partner <span>Since 1998</span></h1>
+        <p>Pan-India FTL & PTL logistics solutions from our Bangalore hub. Safe, trackable, and on-time delivery across 28 states with 500+ owned fleet.</p>
+        <div class="hero-buttons">
+          <a href="#booking" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            Get Instant Quote
+          </a>
+          <a href="#track" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            Track Shipment
+          </a>
+        </div>
+        <div class="hero-features">
+          <div class="hero-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10z"/></svg>
+            GPS Enabled Fleet
+          </div>
+          <div class="hero-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            99.2% On-Time
+          </div>
+          <div class="hero-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Insured Cargo
+          </div>
+        </div>
+      </div>
+      <div class="track-card" id="track">
+        <h3>Live Consignment Tracking</h3>
+        <p class="track-sub">Enter your LR / Consignment number</p>
+        <div class="track-input">
+          <input type="text" id="lrNumber" placeholder="e.g., CRBL123456" autocomplete="off">
+          <button onclick="trackShipment()">Track</button>
+        </div>
+        <div class="track-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Try demo number: CRBL123456
+        </div>
+        <div id="trackResult"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Our Services</span>
+      <h2 class="section-title">Complete Road Logistics Solutions</h2>
+      <p class="section-desc">From full truck loads to part loads, warehousing to express delivery – we move India’s commerce.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="7" width="13" height="7" rx="1.2" stroke-width="1.6"/><path d="M14 9.5h3.3L21 13v1.5h-7V9.5Z" stroke-width="1.6" stroke-linejoin="round"/><circle cx="5.5" cy="17.5" r="2" stroke-width="1.6"/><circle cx="16.5" cy="17.5" r="2" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Full Truck Load (FTL)</h3>
+        <p>Dedicated trucks from Bangalore to any city. Direct, fastest transit with door-to-door pickup and delivery.</p>
+        <div class="service-meta">Capacity: 3T to 25T • All India</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7" rx="1" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1" stroke-width="1.6"/><path d="M14 14h7v3.5a3.5 3.5 0 0 1-3.5 3.5H14v-7Z" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Part Load (PTL)</h3>
+        <p>Cost-effective shared truck space. Daily departures from Bangalore to major hubs with consolidation.</p>
+        <div class="service-meta">Ideal: 50kg - 3000kg</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9.5L12 4l9 5.5v9.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5Z" stroke-width="1.6"/><path d="M9 20V12h6v8" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Warehousing</h3>
+        <p>25,000 sq.ft. secure warehouse at Bommanahalli, Bangalore. Inventory management, cross-docking, last-mile.</p>
+        <div class="service-meta">Bangalore Hub • 24x7 CCTV</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="7" cy="7" r="2.5" stroke-width="1.6"/><circle cx="17" cy="17" r="2.5" stroke-width="1.6"/><path d="M7 9.5v3a5 5 0 0 0 5 5h2.5" stroke-width="1.6" stroke-linecap="round"/><path d="M5 19.5l2-6 3 1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Interstate Transport</h3>
+        <p>All-India permits, GST e-way bill support. Regular routes: BLR-Mumbai, BLR-Delhi, BLR-Chennai, BLR-Kolkata.</p>
+        <div class="service-meta">28 States • UT Covered</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="1.6"/><path d="M12 7v5l3 2.5" stroke-width="1.6" stroke-linecap="round"/><path d="M18.5 4.5l-2 2M5.5 4.5l2 2" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Express Delivery</h3>
+        <p>Time-critical shipments with priority loading, dual drivers, and real-time updates every 3 hours.</p>
+        <div class="service-meta">Next Day to South India</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="17" rx="1" stroke-width="1.6"/><rect x="14" y="8" width="7" height="12" rx="1" stroke-width="1.6"/><path d="M6.5 7.5h0M6.5 11.5h0M6.5 15.5h0M17.5 12h0M17.5 16h0" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Corporate Contracts</h3>
+        <p>Dedicated fleet, monthly billing, MIS reports, and account manager for manufacturing & ecommerce clients.</p>
+        <div class="service-meta">SLA-backed • Pan-India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-number">500+</div><div class="stat-label">Owned & Attached Trucks</div></div>
+      <div class="stat"><div class="stat-number">28</div><div class="stat-label">States Covered</div></div>
+      <div class="stat"><div class="stat-number">99.2%</div><div class="stat-label">On-Time Delivery</div></div>
+      <div class="stat"><div class="stat-number">24x7</div><div class="stat-label">Customer Support</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="fleet" class="section fleet">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Our Fleet</span>
+      <h2 class="section-title">Right Truck for Every Load</h2>
+      <p class="section-desc">Modern, well-maintained fleet with GPS, FASTag, and experienced drivers.</p>
+    </div>
+    <div class="fleet-grid">
+      <div class="fleet-card">
+        <div class="fleet-visual">
+          <svg viewBox="0 0 200 70" fill="none"><rect x="10" y="26" width="68" height="26" rx="3" fill="#0a2540"/><rect x="83" y="30" width="42" height="22" rx="2" fill="#ff6b00"/><rect x="128" y="34" width="18" height="18" rx="1" fill="#0a2540"/><circle cx="34" cy="58" r="7.5" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/><circle cx="100" cy="58" r="7.5" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/></svg>
+        </div>
+        <div class="fleet-body">
+          <div class="fleet-name">Tata 407 / Pickup</div>
+          <div class="fleet-capacity">3 Ton • 14 ft</div>
+          <ul class="fleet-specs"><li>City & local delivery</li><li>PTL shipments</li><li>Door delivery</li></ul>
+        </div>
+      </div>
+      <div class="fleet-card">
+        <div class="fleet-visual">
+          <svg viewBox="0 0 200 70" fill="none"><rect x="8" y="24" width="90" height="28" rx="3" fill="#0a2540"/><rect x="102" y="29" width="42" height="23" rx="2" fill="#ff6b00"/><rect x="147" y="33" width="18" height="19" rx="1" fill="#0a2540"/><circle cx="36" cy="59" r="7.5" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/><circle cx="114" cy="59" r="7.5" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/></svg>
+        </div>
+        <div class="fleet-body">
+          <div class="fleet-name">17ft / 19ft Container</div>
+          <div class="fleet-capacity">7-9 Ton • Closed Body</div>
+          <ul class="fleet-specs"><li>Weatherproof cargo</li><li>E-commerce, FMCG</li><li>Intercity FTL</li></ul>
+        </div>
+      </div>
+      <div class="fleet-card">
+        <div class="fleet-visual">
+          <svg viewBox="0 0 200 70" fill="none"><rect x="6" y="24" width="110" height="12" fill="#64748b" rx="1"/><rect x="6" y="38" width="110" height="14" rx="2" fill="#0a2540" opacity="0.9"/><rect x="120" y="29" width="42" height="23" rx="2" fill="#ff6b00"/><rect x="165" y="33" width="18" height="19" rx="1" fill="#0a2540"/><circle cx="36" cy="59" r="7.5" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/><circle cx="96" cy="59" r="7.5" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/><circle cx="132" cy="59" r="7.5" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/></svg>
+        </div>
+        <div class="fleet-body">
+          <div class="fleet-name">20ft Open Truck (6W)</div>
+          <div class="fleet-capacity">10 Ton • Open Body</div>
+          <ul class="fleet-specs"><li>Industrial goods</li><li>Machinery, steel</li><li>ODC capable</li></ul>
+        </div>
+      </div>
+      <div class="fleet-card">
+        <div class="fleet-visual">
+          <svg viewBox="0 0 200 70" fill="none"><rect x="5" y="22" width="120" height="30" rx="3" fill="#0a2540"/><rect x="129" y="29" width="42" height="23" rx="2" fill="#ff6b00"/><rect x="174" y="33" width="18" height="19" rx="1" fill="#0a2540"/><circle cx="32" cy="59" r="7" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/><circle cx="68" cy="59" r="7" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/><circle cx="104" cy="59" r="7" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/><circle cx="142" cy="59" r="7" fill="#1e293b" stroke="#e2e8f0" stroke-width="2"/></svg>
+        </div>
+        <div class="fleet-body">
+          <div class="fleet-name">32ft SXL / MXL</div>
+          <div class="fleet-capacity">18-25 Ton • Multi Axle</div>
+          <ul class="fleet-specs"><li>High volume FTL</li><li>Long haul</li><li>Volume loads</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Book a Truck</span>
+      <h2 class="section-title">Get Instant Freight Quote</h2>
+      <p class="section-desc">Fill details and our Bangalore operations team will call you in 15 minutes.</p>
+    </div>
+    <div class="booking-grid">
+      <div class="form-card">
+        <form id="bookingForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" class="form-control" id="fullName" required placeholder="Ramesh Kumar">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Company Name</label>
+              <input type="text" class="form-control" id="company" placeholder="Your Company">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mobile Number *</label>
+              <input type="tel" class="form-control" id="phone" required placeholder="9876543210" pattern="[6-9][0-9]{9}">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="you@company.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">From City *</label>
+              <input type="text" class="form-control" id="fromCity" required placeholder="Bangalore">
+            </div>
+            <div class="form-group">
+              <label class="form-label">To City *</label>
+              <input type="text" class="form-control" id="toCity" required placeholder="Mumbai">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Load Type *</label>
+              <select class="form-control" id="loadType" required>
+                <option value="">Select</option>
+                <option>FTL - Full Truck</option>
+                <option>PTL - Part Load</option>
+                <option>Express</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Approx Weight (kg) *</label>
+              <input type="number" class="form-control" id="weight" required placeholder="2000" min="1">
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Pickup Date *</label>
+              <input type="date" class="form-control" id="pickupDate" required>
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Goods Description</label>
+              <input type="text" class="form-control" id="goods" placeholder="e.g., Electronics, Textiles, Auto Parts">
+            </div>
+          </div>
+          <button type="submit" class="form-submit">Request Quote →</button>
+          <div id="formMessage"></div>
+        </form>
+      </div>
+      <div class="booking-info">
+        <div class="info-card">
+          <h3>Why Choubey Roadlines?</h3>
+          <ul class="info-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><strong>Bangalore HQ Advantage:</strong> Faster pickup within 4 hours in Bommanahalli, Hosur Road, Peenya, Whitefield.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><strong>Transparent Pricing:</strong> No hidden charges. GST invoice, e-way bill assistance included.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><strong>Live Tracking:</strong> WhatsApp updates + web tracking link for every shipment.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span><strong>27 Years Trust:</strong> Serving since 1998. 12,000+ Indian businesses delivered safely.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Testimonials</span>
+      <h2 class="section-title">Trusted by Businesses Across India</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p>We ship 15-20 FTLs monthly from our Peenya plant to Delhi & Pune. Choubey Roadlines is always on-time, drivers are professional, and their Bangalore team is super responsive on WhatsApp.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AS</div>
+          <div class="author-info"><h4>Anil Sharma</h4><span>Logistics Head, Auto Components Ltd.</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p>Best PTL service from Bangalore to Kochi and Chennai. Our textiles reach safely, tracking is accurate, and rates are 15% better than big players. Highly recommend.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">PR</div>
+          <div class="author-info"><h4>Priya Reddy</h4><span>Owner, Sri Lakshmi Textiles</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p>Switched to Choubey for our Bangalore-Mumbai express route. 99% on-time, zero damages in 8 months, and their billing is clean. True partner, not just transporter.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">VK</div>
+          <div class="author-info"><h4>Vikram Kulkarni</h4><span>Supply Chain Manager, FMCG Brand</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <span class="section-eyebrow">About Us</span>
+        <h2>27 Years of Moving India Forward</h2>
+        <p>Founded in 1998 in Bangalore, Choubey Roadlines started with 2 trucks on Hosur Road. Today, we're a 500+ fleet powerhouse connecting South India to every corner of Bharat.</p>
+        <p>We are not a broker. We own, operate, and manage our fleet with in-house drivers, 24x7 control room in Bommanahalli, and technology that gives you complete visibility.</p>
+        <div class="about-features">
+          <div class="about-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Own Fleet, No Brokers</span></div>
+          <div class="about-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>GST & E-way Compliant</span></div>
+          <div class="about-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Transit Insurance Available</span></div>
+          <div class="about-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>POD in 48 Hours</span></div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-stats">
+          <div class="about-stat"><div class="about-stat-number">1998</div><div class="about-stat-label">Established in Bangalore</div></div>
+          <div class="about-stat"><div class="about-stat-number">12K+</div><div class="about-stat-label">Happy Clients</div></div>
+          <div class="about-stat"><div class="about-stat-number">2.5L+</div><div class="about-stat-label">Deliveries Completed</div></div>
+          <div class="about-stat"><div class="about-stat-number">25K</div><div class="about-stat-label">Sqft Warehouse</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-eyebrow">Contact Us</span>
+      <h2 class="section-title">Our Bangalore Headquarters</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-details">
+            <h4>Head Office</h4>
+            <p>No. 45, Hosur Road, Bommanahalli,<br>Bangalore 560068, Karnataka</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="contact-details">
+            <h4>Phone & WhatsApp</h4>
+            <p><a href="tel:+918041234567">+91 80 4123 4567</a><br><a href="tel:+919886001234">+91 98860 01234</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-details">
+            <h4>Email</h4>
+            <p><a href="mailto:bookings@choubeyroadlines.com">bookings@choubeyroadlines.com</a><br><a href="mailto:support@choubeyroadlines.com">support@choubeyroadlines.com</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="contact-details">
+            <h4>Working Hours</h4>
+            <p>Mon - Sat: 8:00 AM - 9:00 PM<br>Control Room: 24x7 for tracking</p>
+          </div>
+        </div>
+      <div class="map-card">
+        <div class="map-visual">
+          <svg class="map-india" viewBox="0 0 200 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M70 20 L110 15 L140 35 L150 70 L145 110 L155 150 L140 190 L120 220 L90 235 L60 220 L45 180 L35 140 L40 100 L50 60 L65 35 Z" fill="currentColor"/>
+          </svg>
+          <div class="map-pin"></div>
+        </div>
+        <div class="map-content">
+          <h4>Strategic Bangalore Location</h4>
+          <p>Located on Hosur Road (NH-44), just 12 km from Electronic City and 18 km from Bangalore City Railway Station. Easy access for loading from Bommanahalli, HSR, Peenya, and Whitefield industrial areas. Ample truck parking and 24x7 loading facility.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>CHOUBEY<span>ROADLINES</span></h3>
+        <p>India's reliable road transport partner since 1998. Pan-India FTL & PTL services from Bangalore with 500+ trucks, GPS tracking, and 99.2% on-time delivery.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.86 11.86 0 0012 0 11.93 11.93 0 003.48 20.52L0 24l3.6-3.48A11.93 0 0012 24a11.86 0 008.52-3.48A11.86 11.86 0 0024 12a11.86 0 00-3.48-8.52zM12 22a10 10 0 01-5.1-1.4l-.37-.22-3.03.9.96-2.95-.24-.38A10 10 0 1112 22zm5.46-7.5c-.3-.15-1.76-.87-2.03-1s-.46-.15-.66.15-.76 1-1 1.2-.37.22-.68.07a8.1 8.1 0 01-2.4-1.48 9 9 0 01-1.66-2.07c-.17-.3 0-.46.13-.6s.3-.37.45-.56a2 2 0 00.3-.5 1.5 1.5 0 00-.07-.7c-.07-.15-.66-1.6-.9-2.2s-.48-.5-.66-.5h-.56a1.1 1.1 0 00-.8.37 3.36 3.36 0 00-1 2.5 5.8 5.8 0 001.2 3.1 13.3 13.3 0 005.1 4.5 6 6 0 003 .8 2.5 2.5 0 001.65-.6 2 2 0 00.5-1.4c0-.25-.03-.42-.15-.57z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#fleet">Our Fleet</a></li>
+          <li><a href="#booking">Get Quote</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services">FTL Transport</a></li>
+          <li><a href="#services">PTL Cargo</a></li>
+          <li><a href="#services">Warehousing</a></li>
+          <li><a href="#services">Express Delivery</a></li>
+          <li><a href="#services">Interstate</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li>No. 45, Hosur Road, Bommanahalli, Bangalore 560068</li>
+          <li><a href="tel:+918041234567">+91 80 4123 4567</a></li>
+          <li><a href="mailto:bookings@choubeyroadlines.com">bookings@choubeyroadlines.com</a></li>
+          <li>GSTIN: 29AABCC1234H1Z5</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 Choubey Roadlines Pvt. Ltd. All rights reserved.</div>
+      <div>Made in Bangalore • Serving India Since 1998</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+const mobileToggle = document.getElementById('mobileToggle');
+const navLinks = document.getElementById('navLinks');
+mobileToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('active'));
+});
+
+// Set min date today
+const dateInput = document.getElementById('pickupDate');
+if(dateInput){
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.min = today;
+  dateInput.value = today;
+}
+
+// Tracking demo
+function trackShipment(){
+  const lr = document.getElementById('lrNumber').value.trim().toUpperCase();
+  const result = document.getElementById('trackResult');
+  
+  if(!lr){
+    result.innerHTML = '<div class="alert error">Please enter your LR / Consignment number</div>';
+    return;
+  }
+  
+  result.innerHTML = '<div class="alert info">Fetching live status...</div>';
+  
+  setTimeout(() => {
+    if(lr === 'CRBL123456'){
+      result.innerHTML = `
+        <div class="track-status">
+          <div class="status-header">
+            <div class="status-id">LR: CRBL123456</div>
+            <div class="status-badge">In Transit</div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot done"></div>
+              <div class="timeline-content">
+                <div>
+                  <div class="timeline-title">Picked Up - Bangalore</div>
+                  <div class="timeline-desc">Bommanahalli Hub</div>
+                </div>
+                <div class="timeline-time">22 May, 08:30 AM</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot done"></div>
+              <div class="timeline-content">
+                <div>
+                  <div class="timeline-title">Departed Hub</div>
+                  <div class="timeline-desc">Vehicle KA-01-AB-1234</div>
+                </div>
+                <div class="timeline-time">22 May, 02:15 PM</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot active"></div>
+              <div class="timeline-content">
+                <div>
+                  <div class="timeline-title">In Transit - Near Hubli</div>
+                  <div class="timeline-desc">GPS last updated 6 min ago</div>
+                </div>
+                <div class="timeline-time">23 May, 06:00 AM</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div>
+                  <div class="timeline-title">Expected Delivery - Mumbai</div>
+                  <div class="timeline-desc">Bhiwandi Warehouse</div>
+                </div>
+                <div class="timeline-time">23 May, 10:00 PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    } else {
+      result.innerHTML = `<div class="alert info">No live data for <strong>${lr}</strong>. Demo available for <strong>CRBL123456</strong>. For real tracking, call +91 80 4123 4567 or WhatsApp your LR number.</div>`;
+    }
+  }, 800);
+}
+
+// Allow Enter key for tracking
+document.getElementById('lrNumber').addEventListener('keypress', (e) => {
+  if(e.key === 'Enter'){
+    e.preventDefault();
+    trackShipment();
+  }
+});
+
+// Booking form validation
+const bookingForm = document.getElementById('bookingForm');
+const formMessage = document.getElementById('formMessage');
+
+bookingForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  
+  const name = document.getElementById('fullName').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const fromCity = document.getElementById('fromCity').value.trim();
+  const toCity = document.getElementById('toCity').value.trim();
+  const loadType = document.getElementById('loadType').value;
+  const weight = document.getElementById('weight').value;
+  const date = document.getElementById('pickupDate').value;
+  const email = document.getElementById('email').value.trim();
+  
+  // validation
+  if(name.length < 3){
+    showFormMsg('Please enter your full name (min 3 characters)', 'error');
+    return;
+  }
+  const phoneRegex = /^[6-9]\d{9}$/;
+  if(!phoneRegex.test(phone)){
+    showFormMsg('Please enter valid 10-digit Indian mobile number', 'error');
+    return;
+  }
+  if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    showFormMsg('Please enter a valid email address', 'error');
+    return;
+  }
+  if(!fromCity || !toCity){
+    showFormMsg('Please enter both from and to cities', 'error');
+    return;
+  }
+  if(fromCity.toLowerCase() === toCity.toLowerCase()){
+    showFormMsg('From and To cities cannot be same', 'error');
+    return;
+  }
+  if(!loadType){
+    showFormMsg('Please select load type', 'error');
+    return;
+  }
+  if(!weight || weight < 1){
+    showFormMsg('Please enter valid weight', 'error');
+    return;
+  }
+  if(!date){
+    showFormMsg('Please select pickup date', 'error');
+    return;
+  }
+  
+  // success
+  const ref = 'CRBL' + Math.floor(100000 + Math.random() * 900000);
+  showFormMsg(`<strong>Quote request received!</strong> Reference: ${ref}. Our Bangalore team will call you at +91 ${phone} within 15 minutes. Thank you, ${name}!`, 'success');
+  bookingForm.reset();
+  if(dateInput){
+    dateInput.value = new Date().toISOString().split('T')[0];
+  }
+  
+  // Scroll to message
+  formMessage.scrollIntoView({behavior:'smooth', block:'nearest'});
+});
+
+function showFormMsg(msg, type){
+  formMessage.innerHTML = `<div class="alert ${type}" style="margin-top:16px">${msg}</div>`;
+  setTimeout(() => {
+    if(type === 'success') formMessage.innerHTML = '';
+  }, 8000);
+}
+
+// Active nav on scroll
+const sections = document.querySelectorAll('section[id]');
+const navA = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    const top = window.scrollY;
+    const offset = sec.offsetTop - 100;
+    const height = sec.offsetHeight;
+    if(top >= offset && top < offset + height){
+      current = sec.getAttribute('id');
+    }
+  });
+  navA.forEach(a => {
+    a.classList.remove('active');
+    if(a.getAttribute('href') === '#' + current){
+      a.classList.add('active');
+    }
+  });
+});
+</script>
+</body>
+</html>
